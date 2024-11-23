@@ -1,0 +1,16 @@
+footer_menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Projects'
+      url: '/projects/'
+    - title: 'Elements'
+      url: '/elements/'
+    - title: 'About'
+      url: '/about/'
+    - title: 'Blog'
+      url: '/blog/'
+
+copyright_text_html: >-
+  <p>Made with <i class="ion ion-md-heart"></i> and Jekyll.</p>
+  <p> 2024 &copy; <a href="/">Atul Mohan Kamble</a>.</p>

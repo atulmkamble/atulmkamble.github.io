@@ -18,20 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Leigh Stewardson
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://leighlawhon.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  leighlawhon
+title: Atul Mohan Kamble
+baseurl: ""
+url: "http://atulmkamble.github.io"
+github_username:  atulmkamble
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 plugins:
-  - jekyll-remote-theme
+  - jekyll-bookshop
+  - jekyll-sitemap
+  - jekyll/tagging
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -58,3 +54,49 @@ search: true
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+bookshop_locations:
+  - component-library
+
+exclude:
+  - postcss.config.js
+  - node_modules
+
+collections_dir: 'collections'
+
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+  projects:
+    output: true
+    permalink: /project/:slug
+  testimonials:
+    output: false
+  posts:
+    output: true
+    permalink: /blog/:slug
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      type: pages
+      path: _pages/index.html
+    values:
+      permalink: /
+  - scope:
+      type: projects
+    values:
+      layout: project
+  - scope:
+      type: posts
+    values:
+      layout: post
+
+# Tags
+tag_page_dir: tag
+tag_page_layout: tag_page
+tag_permalink_style: /:title
