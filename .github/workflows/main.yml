@@ -22,6 +22,7 @@ jobs:
         run: |
           gem install bundler
           bundle install
+          gem install jekyll-bookshop
 
       - name: Build the site
         run: bundle exec jekyll build
