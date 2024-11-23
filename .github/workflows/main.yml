@@ -1,14 +1,21 @@
 name: Copy To Branches
+
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual triggering from GitHub Actions UI
+
 jobs:
   copy-to-branches:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      # Step 1: Check out the repository
+      - name: Check out repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      # Step 2: Copy changes to other branches
       - name: Copy To Branches Action
         uses: planetoftheweb/copy-to-branches@v1.2
-        env:
-          key: main
+        with:
+          source-branch: main       # Specify the source branch (e.g., `main`)
+          target-branches: "dev,staging" # Specify the target branches (comma-separated)
