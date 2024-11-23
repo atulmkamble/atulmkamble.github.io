@@ -28,11 +28,6 @@ plugins:
   - jekyll-bookshop
   - jekyll-sitemap
   - jekyll/tagging
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
   - jekyll-include-cache
 search: true
 # Exclude from processing.
