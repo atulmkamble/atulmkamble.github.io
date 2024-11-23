@@ -1,21 +1,33 @@
-name: Copy To Branches
+name: Build and Deploy Jekyll Site
 
 on:
-  workflow_dispatch: # Allows manual triggering from GitHub Actions UI
+  push:
+    branches:
+      - main
 
 jobs:
-  copy-to-branches:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      # Step 1: Check out the repository
       - name: Check out repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      # Step 2: Copy changes to other branches
-      - name: Copy To Branches Action
-        uses: planetoftheweb/copy-to-branches@v1.2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          source-branch: main       # Specify the source branch (e.g., `main`)
-          target-branches: "dev,staging" # Specify the target branches (comma-separated)
+          ruby-version: 3.0 # Match the Ruby version in your Gemfile.lock
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build the site
+        run: bundle exec jekyll build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
