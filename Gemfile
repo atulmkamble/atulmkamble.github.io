@@ -7,20 +7,16 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.3.2"
-gem "jekyll-bookshop", "~> 3.12.0"
-gem "jekyll-tagging", "~> 1.1.0"
-# Include any other plugins you need
-gem "jekyll-sitemap"
-gem "jekyll-seo-tag"
-gem "jekyll-include-cache"
+gem "jekyll", "~> 3.10.0"
 
-# group :jekyll_plugins do
-#   gem "jekyll-bookshop"
-#   gem "jekyll-sitemap"
-#   gem "jekyll-tagging"
-#   gem "jekyll-include-cache"
-# end
+group :jekyll_plugins do
+  gem 'github-pages', '~> 232'
+  gem 'jekyll-bookshop', '~> 3.12'
+  gem 'jekyll-sitemap', '~> 1.4'
+  gem 'jekyll-tagging', '~> 1.1'
+  gem 'jekyll-include-cache', '~> 0.2.1'
+  gem 'jekyll-seo-tag', '~> 2.8'
+end
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do

@@ -1,4 +1,4 @@
-name: Jekyll Build
+name: Build and Deploy Jekyll
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1' # Match the Ruby version required for Jekyll
+        ruby-version: '3.1'
         bundler-cache: true
 
     - name: Install Dependencies
@@ -25,8 +25,8 @@ jobs:
     - name: Build Site
       run: bundle exec jekyll build
 
-    - name: Upload Build Artifact
-      uses: actions/upload-artifact@v3
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        name: site
-        path: ./_site
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
