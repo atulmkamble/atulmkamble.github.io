@@ -1,6 +1,6 @@
 title: Vonge
 
-baseurl: "./site"
+baseurl: "site"
 
 plugins:
   - jekyll-bookshop
