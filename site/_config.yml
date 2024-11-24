@@ -1,7 +1,5 @@
 title: Vonge
 
-baseurl: "site"
-
 plugins:
   - jekyll-bookshop
   - jekyll-sitemap
