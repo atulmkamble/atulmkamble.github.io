@@ -1,0 +1,82 @@
+baseURL: "https://atulmkamble.github.io/"
+languageCode: "en-us"
+title: "Atul Mohan Kamble"
+theme: "PaperMod"
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 40
+
+params:
+  # Theme
+  showToc: true
+  TocOpen: false
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideMeta: false
+
+  # For enchanced SEO
+  env: production
+
+  # Home Page
+  profileMode:
+    enabled: true
+    title: "Atul Mohan Kamble"
+    subtitle: "Hi 👋 I am Atul, an AI/ML Engineer who turns raw data into strategic decisions 📊. I build robust and scalable end-to-end AI/ML systems that help teams launch 0 -> 1 quickly and stay ahead of the curve 📈. In the recent years, I have been building multi-agent systems that solve business problems 💡. I thrive on turning ideas into resilient production grade solutions and I am a lifelong believer in continuous learning 📚. When I am not coding, I chase the next AI/ML breakthrough, let my guitar sing 🎸 and keep my rhythm alive on the soccer field ⚽️."
+    imageUrl: "home/profile-pic.jpeg"
+    imageWidth: 220
+    imageHeight: 220
+
+  # List View
+  hideDescriptionInList: true
+
+  # cover image for posts
+  cover:
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  socialIcons:
+    - name: "email"
+      url: "mailto:kambleatulm@gmail.com"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/atulmkamble/"
+    - name: "github"
+      url: "https://github.com/atulmkamble"
+
+  # Text search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# for search using Fuse.js
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# allow HTML in MD
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
