@@ -38,7 +38,7 @@ params:
     enabled: true
     title: "Atul Mohan Kamble"
     subtitle: "Hi 👋 I am Atul, an AI/ML Engineer who turns raw data into strategic decisions 📊. I build robust and scalable end-to-end AI/ML systems that help teams launch 0 -> 1 quickly and stay ahead of the curve 📈. In the recent years, I have been building multi-agent systems that solve business problems 💡. I thrive on turning ideas into resilient production grade solutions and I am a lifelong believer in continuous learning 📚. When I am not coding, I chase the next AI/ML breakthrough, let my guitar sing 🎸 and keep my rhythm alive on the soccer field ⚽️."
-    imageUrl: "images/profile-pic.jpeg"
+    imageUrl: "/home/profile-pic.jpeg"
     imageWidth: 220
     imageHeight: 220
 
